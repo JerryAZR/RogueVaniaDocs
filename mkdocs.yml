@@ -19,6 +19,7 @@ markdown_extensions:
   - pymdownx.keys
 
 plugins:
+  - drawio
   - search
   - mermaid2
   - panzoom
