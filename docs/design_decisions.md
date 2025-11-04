@@ -1,9 +1,9 @@
 # 🧠 Design Decisions
 
-This document records high-level design and technical choices made during early development.
-Each section should summarize the **current decision**, **rationale**, and **open questions** to revisit later.
-
-_Last updated: (fill in date)_
+This document records high-level design and technical choices made during early
+development.
+Each section should summarize the **current decision**, **rationale**, an
+**open questions** to revisit later.
 
 ---
 
@@ -12,47 +12,45 @@ _Last updated: (fill in date)_
 **Goal:** Describe what the game _is_ and what defines its core experience.
 
 - **Genre & Inspiration:**
-  _e.g., Multiplayer roguevania inspired by Dead Cells and Hollow Knight._
+  Multiplayer roguevania inspired by Dead Cells and Hollow Knight.
+  Start as single-player.
 
 - **Core Loop Summary:**
   _e.g., Explore → Fight → Checkpoint → Upgrade → Repeat._
 
 - **Primary Pillars:**
-    - [ ] Combat Feel
-    - [ ] Customizable Skills
-    - [ ] Story Integration
-    - [ ] Meta-Progression
+    - Combat Feel
+    - Customizable Skills
+    - Story Integration
+    - Meta-Progression
 
 - **Rationale / Comments:**
-  -
+    - TBD
 
 - **Open Questions:**
-  -
+    - TBD
 
 ---
 
-## 🧩 2. Scene & Game Flow Structure
+## 🧩 2. Primary Scenes
 
 **Goal:** Define how scenes, levels, and transitions are managed.
 
-| Element | Description |
-|----------|--------------|
-| Main Menu | |
-| Hub / Safe Area | |
-| Dungeon | |
-| Checkpoint / Boss Room | |
+### Main Menu
 
-- **Data Persistence:**
-  _What persists across scenes? (e.g., unlocked items, skill grid, meta progression)_
+Where players start games and manages saves
 
-- **Scene Loading Approach:**
-  _Single-scene or additive loading plan._
+### Hub / Safe Area
 
-- **Rationale / Comments:**
-  -
+### Dungeon
 
-- **Open Questions:**
-  -
+Each scene contains a sub-level. Several sub-levels are chained to form a meta-
+level. Clearing a meta-level for the first time unlocks new safe area and
+advances story progression.
+
+Dungeons are generated procedurally using the Edgar Pro package.
+
+Boss rooms can be standalone scenes or part of dungeons.
 
 ---
 
@@ -62,10 +60,11 @@ _Last updated: (fill in date)_
 
 | Aspect | Decision |
 |--------|-----------|
-| Item & Skill Definitions | ScriptableObjects / JSON / other |
-| Enemy / NPC Definitions | |
-| Scene Assets | |
-| Asset Loading Strategy | Unity built-in / Addressables / custom |
+| Item & Skill Definitions | ScriptableObjects |
+| Enemy Definitions | Prefabs / ScriptableObjects |
+| NPC Definitions | Prefabs / ScriptableObjects |
+| Scene Assets | Unity Scenes |
+| Asset Loading Strategy | Unity built-in (evolve later) |
 
 - **Rationale / Comments:**
   -
@@ -82,7 +81,7 @@ _Last updated: (fill in date)_
 | Element | Decision |
 |----------|-----------|
 | Controller Framework | Corgi Engine |
-| Input System | Unity Input System / legacy |
+| Input System | Unity Input System (Corgi Input Manager) |
 | Core Combat Style | Melee-focused, limited ranged |
 | Parry / Dodge / Skills | Basic set planned for prototype |
 
@@ -102,7 +101,7 @@ _Last updated: (fill in date)_
 |------------|--------------|
 | Trigger Blocks | |
 | Action Blocks | |
-| Resource / Balance Mechanic | Mana / Overheat / TBD |
+| Resource / Balance Mechanic | Mana / Overheat |
 
 - **Rationale / Comments:**
   -
@@ -120,7 +119,7 @@ _Last updated: (fill in date)_
 |-----------|--------------|
 | Meta Progression | Unlocks, upgrades, bag expansion |
 | Run Data | Inventory, skill grid, temporary stats |
-| Save Format | JSON / ScriptableObject / custom |
+| Save Format | JSON |
 | Checkpoints | Hub areas or safe levels between dungeons |
 
 - **Rationale / Comments:**
@@ -137,9 +136,8 @@ _Last updated: (fill in date)_
 
 | Aspect | Decision |
 |--------|-----------|
-| Messaging / Event System | Direct references / C# Events / Scriptable Signals |
-| System Management | Central GameContext / Managers / Service Locator |
-| Dependency Direction | Gameplay → Systems (one-way) |
+| Messaging / Event System | Direct references / C# Events |
+| System Management | GameManager that holds all persistent singletons |
 
 - **Rationale / Comments:**
   -
@@ -155,10 +153,10 @@ _Last updated: (fill in date)_
 
 | Aspect | Decision |
 |--------|-----------|
-| Visual Style | Pixel art / vector / hybrid |
+| Visual Style | Any |
 | Camera | 2D side-scroller |
-| UI Style | Minimal / stylized / immersive |
-| Input Target | Controller-first / keyboard fallback |
+| UI Style | Any |
+| Input Target | keyboard first + controller |
 
 - **Rationale / Comments:**
   -
@@ -174,10 +172,10 @@ _Last updated: (fill in date)_
 
 | Area | Decision |
 |------|-----------|
-| Version Control | Git / Repo structure / branching |
-| Package Management | Manual import / Git submodules |
+| Version Control | Git / GitHub |
+| Package Management | Unity package manager |
 | Folder Structure | (to be filled) |
-| Build Targets | Windows first / others later |
+| Build Targets | Windows first / Apple optional / Linux later |
 | Level Authoring | Edgar Unity + handcrafted room prefabs |
 
 - **Rationale / Comments:**
@@ -194,18 +192,23 @@ _Last updated: (fill in date)_
 
 | Topic | Notes / Owner / Status |
 |--------|------------------------|
-| Corgi + FishNet integration | |
 | Skill Grid performance | |
 | Save / serialization format | |
-| Scene stacking feasibility | |
 | Edgar Unity procedural API | |
 
 - **Rationale / Comments:**
   -
 
+## 11. Dungeon Tile Types
+
+- Basic
+- Spikes
+- Moving Platforms
+- Ladders
+
 ---
 
-## ✅ 11. Next Steps / Action Items
+## ✅ 12. Next Steps / Action Items
 
 | Owner | Task | Priority | Notes |
 |--------|-------|-----------|-------|
