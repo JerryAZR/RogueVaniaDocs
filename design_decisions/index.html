@@ -1,0 +1,1180 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../game_overview/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>🧠 Design Decisions - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/panzoom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <meta name="panzoom-theme" content="material">
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#design-decisions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🧠 Design Decisions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    🧠 Design Decisions
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧠 Design Decisions
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-core-game-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎮 1. Core Game Identity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-primary-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 2. Primary Scenes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 2. Primary Scenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main Menu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hub-safe-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hub / Safe Area
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dungeon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dungeon
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data-asset-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 3. Data &amp; Asset Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-player-control-combat" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚔️ 4. Player Control &amp; Combat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-skill-grid-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 5. Skill Grid System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-save-progression-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      💾 6. Save &amp; Progression System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-code-architecture-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 7. Code Architecture &amp; Communication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-art-ux-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 8. Art &amp; UX Direction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-technical-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ 9. Technical Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-known-technical-risks-research-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔮 10. Known Technical Risks / Research Topics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-dungeon-tile-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Dungeon Tile Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-next-steps-action-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ 12. Next Steps / Action Items
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🎮 Game Overview -- [Working Title]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../skill_grid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ⚔️ Skill Grid – Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Implementation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Implementation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation/SceneTransition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scene Transitions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-core-game-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎮 1. Core Game Identity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-primary-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 2. Primary Scenes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧩 2. Primary Scenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-menu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main Menu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hub-safe-area" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hub / Safe Area
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dungeon" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dungeon
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-data-asset-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 3. Data &amp; Asset Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-player-control-combat" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚔️ 4. Player Control &amp; Combat
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-skill-grid-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 5. Skill Grid System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-save-progression-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      💾 6. Save &amp; Progression System
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-code-architecture-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 7. Code Architecture &amp; Communication
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-art-ux-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 8. Art &amp; UX Direction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-technical-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ 9. Technical Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-known-technical-risks-research-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔮 10. Known Technical Risks / Research Topics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-dungeon-tile-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Dungeon Tile Types
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-next-steps-action-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ 12. Next Steps / Action Items
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="design-decisions">🧠 Design Decisions<a class="headerlink" href="#design-decisions" title="Permanent link">&para;</a></h1>
+<p>This document records high-level design and technical choices made during early
+development.
+Each section should summarize the <strong>current decision</strong>, <strong>rationale</strong>, an
+<strong>open questions</strong> to revisit later.</p>
+<hr />
+<h2 id="1-core-game-identity">🎮 1. Core Game Identity<a class="headerlink" href="#1-core-game-identity" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Describe what the game <em>is</em> and what defines its core experience.</p>
+<ul>
+<li>
+<p><strong>Genre &amp; Inspiration:</strong>
+  Multiplayer roguevania inspired by Dead Cells and Hollow Knight.
+  Start as single-player.</p>
+</li>
+<li>
+<p><strong>Core Loop Summary:</strong>
+  <em>e.g., Explore → Fight → Checkpoint → Upgrade → Repeat.</em></p>
+</li>
+<li>
+<p><strong>Primary Pillars:</strong></p>
+<ul>
+<li>Combat Feel</li>
+<li>Customizable Skills</li>
+<li>Story Integration</li>
+<li>Meta-Progression</li>
+</ul>
+</li>
+<li>
+<p><strong>Rationale / Comments:</strong></p>
+<ul>
+<li>TBD</li>
+</ul>
+</li>
+<li>
+<p><strong>Open Questions:</strong></p>
+<ul>
+<li>TBD</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="2-primary-scenes">🧩 2. Primary Scenes<a class="headerlink" href="#2-primary-scenes" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Define how scenes, levels, and transitions are managed.</p>
+<h3 id="main-menu">Main Menu<a class="headerlink" href="#main-menu" title="Permanent link">&para;</a></h3>
+<p>Where players start games and manages saves</p>
+<h3 id="hub-safe-area">Hub / Safe Area<a class="headerlink" href="#hub-safe-area" title="Permanent link">&para;</a></h3>
+<h3 id="dungeon">Dungeon<a class="headerlink" href="#dungeon" title="Permanent link">&para;</a></h3>
+<p>Each scene contains a sub-level. Several sub-levels are chained to form a meta-
+level. Clearing a meta-level for the first time unlocks new safe area and
+advances story progression.</p>
+<p>Dungeons are generated procedurally using the Edgar Pro package.</p>
+<p>Boss rooms can be standalone scenes or part of dungeons.</p>
+<hr />
+<h2 id="3-data-asset-structure">📦 3. Data &amp; Asset Structure<a class="headerlink" href="#3-data-asset-structure" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Establish how gameplay data and assets are represented and loaded.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Item &amp; Skill Definitions</td>
+<td>ScriptableObjects</td>
+</tr>
+<tr>
+<td>Enemy Definitions</td>
+<td>Prefabs / ScriptableObjects</td>
+</tr>
+<tr>
+<td>NPC Definitions</td>
+<td>Prefabs / ScriptableObjects</td>
+</tr>
+<tr>
+<td>Scene Assets</td>
+<td>Unity Scenes</td>
+</tr>
+<tr>
+<td>Asset Loading Strategy</td>
+<td>Unity built-in (evolve later)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>Rationale / Comments:</strong>
+  -</p>
+</li>
+<li>
+<p><strong>Open Questions:</strong>
+  -</p>
+</li>
+</ul>
+<hr />
+<h2 id="4-player-control-combat">⚔️ 4. Player Control &amp; Combat<a class="headerlink" href="#4-player-control-combat" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Decide how movement and combat systems are implemented.</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Controller Framework</td>
+<td>Corgi Engine</td>
+</tr>
+<tr>
+<td>Input System</td>
+<td>Unity Input System (Corgi Input Manager)</td>
+</tr>
+<tr>
+<td>Core Combat Style</td>
+<td>Melee-focused, limited ranged</td>
+</tr>
+<tr>
+<td>Parry / Dodge / Skills</td>
+<td>Basic set planned for prototype</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>Rationale / Comments:</strong>
+  -</p>
+</li>
+<li>
+<p><strong>Open Questions:</strong>
+  -</p>
+</li>
+</ul>
+<hr />
+<h2 id="5-skill-grid-system">🧠 5. Skill Grid System<a class="headerlink" href="#5-skill-grid-system" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Define how customizable skills are represented and executed.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trigger Blocks</td>
+<td></td>
+</tr>
+<tr>
+<td>Action Blocks</td>
+<td></td>
+</tr>
+<tr>
+<td>Resource / Balance Mechanic</td>
+<td>Mana / Overheat</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>Rationale / Comments:</strong>
+  -</p>
+</li>
+<li>
+<p><strong>Open Questions:</strong>
+  -</p>
+</li>
+</ul>
+<hr />
+<h2 id="6-save-progression-system">💾 6. Save &amp; Progression System<a class="headerlink" href="#6-save-progression-system" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Define what data is saved and how progression works.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Meta Progression</td>
+<td>Unlocks, upgrades, bag expansion</td>
+</tr>
+<tr>
+<td>Run Data</td>
+<td>Inventory, skill grid, temporary stats</td>
+</tr>
+<tr>
+<td>Save Format</td>
+<td>JSON</td>
+</tr>
+<tr>
+<td>Checkpoints</td>
+<td>Hub areas or safe levels between dungeons</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>Rationale / Comments:</strong>
+  -</p>
+</li>
+<li>
+<p><strong>Open Questions:</strong>
+  -</p>
+</li>
+</ul>
+<hr />
+<h2 id="7-code-architecture-communication">🧰 7. Code Architecture &amp; Communication<a class="headerlink" href="#7-code-architecture-communication" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Outline core architectural patterns to ensure scalability and decoupling.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Messaging / Event System</td>
+<td>Direct references / C# Events</td>
+</tr>
+<tr>
+<td>System Management</td>
+<td>GameManager that holds all persistent singletons</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>Rationale / Comments:</strong>
+  -</p>
+</li>
+<li>
+<p><strong>Open Questions:</strong>
+  -</p>
+</li>
+</ul>
+<hr />
+<h2 id="8-art-ux-direction">🎨 8. Art &amp; UX Direction<a class="headerlink" href="#8-art-ux-direction" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Define visual and UI goals early for consistency.</p>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Visual Style</td>
+<td>Likely 3D low-poly</td>
+</tr>
+<tr>
+<td>Camera</td>
+<td>2D side-scroller</td>
+</tr>
+<tr>
+<td>UI Style</td>
+<td>Any</td>
+</tr>
+<tr>
+<td>Input Target</td>
+<td>keyboard first + controller</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>Rationale / Comments:</strong></p>
+<ul>
+<li>Compared to pixel arts, it's easier to find low-poly assets with consistent style</li>
+<li>We could even make our own models</li>
+</ul>
+</li>
+<li>
+<p><strong>Open Questions:</strong>
+  -</p>
+</li>
+</ul>
+<hr />
+<h2 id="9-technical-workflow">🏗️ 9. Technical Workflow<a class="headerlink" href="#9-technical-workflow" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Define development and collaboration conventions.</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Version Control</td>
+<td>Git / GitHub</td>
+</tr>
+<tr>
+<td>Package Management</td>
+<td>Unity package manager</td>
+</tr>
+<tr>
+<td>Folder Structure</td>
+<td>(to be filled)</td>
+</tr>
+<tr>
+<td>Build Targets</td>
+<td>Windows first / Apple optional / Linux later</td>
+</tr>
+<tr>
+<td>Level Authoring</td>
+<td>Edgar Unity + handcrafted room prefabs</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>Rationale / Comments:</strong>
+  -</p>
+</li>
+<li>
+<p><strong>Open Questions:</strong>
+  -</p>
+</li>
+</ul>
+<hr />
+<h2 id="10-known-technical-risks-research-topics">🔮 10. Known Technical Risks / Research Topics<a class="headerlink" href="#10-known-technical-risks-research-topics" title="Permanent link">&para;</a></h2>
+<p><strong>Goal:</strong> Track areas that need investigation or pose integration risk.</p>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Notes / Owner / Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Skill Grid performance</td>
+<td></td>
+</tr>
+<tr>
+<td>Save / serialization format</td>
+<td></td>
+</tr>
+<tr>
+<td>Edgar Unity procedural API</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Rationale / Comments:</strong>
+  -</li>
+</ul>
+<h2 id="11-dungeon-tile-types">11. Dungeon Tile Types<a class="headerlink" href="#11-dungeon-tile-types" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Basic</li>
+<li>Spikes</li>
+<li>Moving Platforms</li>
+<li>Ladders</li>
+</ul>
+<hr />
+<h2 id="12-next-steps-action-items">✅ 12. Next Steps / Action Items<a class="headerlink" href="#12-next-steps-action-items" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Owner</th>
+<th>Task</th>
+<th>Priority</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p><strong>Tip:</strong> Keep this document concise — it should evolve <em>with</em> the project, not become a wiki.
+Each section represents a decision snapshot you can revisit as the design matures.</p>
+</blockquote>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    2025-11-09
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../assets/javascripts/panzoom.min.js"></script>
+      
+        <script src="../assets/javascripts/zoompan.js"></script>
+      
+    
+  </body>
+</html>

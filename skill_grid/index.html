@@ -1,0 +1,657 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../game_overview/" rel="prev"/>
+<link href="../implementation/SceneTransition/" rel="next"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.23" name="generator"/>
+<title>⚔️ Skill Grid – Overview - My Docs</title>
+<link href="../assets/stylesheets/main.84d31ad4.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../assets/stylesheets/panzoom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<meta name="panzoom-theme" content="material">
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#skill-grid-overview">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="My Docs" class="md-header__button md-logo" data-md-component="logo" href=".." title="My Docs">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            My Docs
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              ⚔️ Skill Grid – Overview
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="My Docs" class="md-nav__button md-logo" data-md-component="logo" href=".." title="My Docs">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    My Docs
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
+    Welcome to MkDocs
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../design_decisions/">
+<span class="md-ellipsis">
+    🧠 Design Decisions
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../game_overview/">
+<span class="md-ellipsis">
+    🎮 Game Overview -- [Working Title]
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    ⚔️ Skill Grid – Overview
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    ⚔️ Skill Grid – Overview
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-idea">
+<span class="md-ellipsis">
+      Core Idea
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-components">
+<span class="md-ellipsis">
+      Core Components
+    </span>
+</a>
+<nav aria-label="Core Components" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#skill-types-supported">
+<span class="md-ellipsis">
+      Skill Types Supported
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#early-scope-vs-long-term">
+<span class="md-ellipsis">
+      Early Scope vs. Long-Term
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#balancing-the-skill-grid">
+<span class="md-ellipsis">
+      ⚖️ Balancing the Skill Grid
+    </span>
+</a>
+<nav aria-label="⚖️ Balancing the Skill Grid" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-core-problem">
+<span class="md-ellipsis">
+      The Core Problem
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mitigation-systems">
+<span class="md-ellipsis">
+      Mitigation Systems
+    </span>
+</a>
+<nav aria-label="Mitigation Systems" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-mana-system-resource-cost">
+<span class="md-ellipsis">
+      1. Mana System (Resource Cost)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-overheat-system-execution-cost">
+<span class="md-ellipsis">
+      2. Overheat System (Execution Cost)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-trigger-rate-limits-throttle">
+<span class="md-ellipsis">
+      3. Trigger Rate Limits (Throttle)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-decay-diminishing-returns">
+<span class="md-ellipsis">
+      4. Decay / Diminishing Returns
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-external-anchors-event-only-chains">
+<span class="md-ellipsis">
+      5. External Anchors (Event-Only Chains)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#design-approach-recommendation">
+<span class="md-ellipsis">
+      Design Approach Recommendation
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#minimal-example">
+<span class="md-ellipsis">
+      Minimal Example
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    Implementation
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            Implementation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../implementation/SceneTransition/">
+<span class="md-ellipsis">
+    Scene Transitions
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-idea">
+<span class="md-ellipsis">
+      Core Idea
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-components">
+<span class="md-ellipsis">
+      Core Components
+    </span>
+</a>
+<nav aria-label="Core Components" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#skill-types-supported">
+<span class="md-ellipsis">
+      Skill Types Supported
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#early-scope-vs-long-term">
+<span class="md-ellipsis">
+      Early Scope vs. Long-Term
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#balancing-the-skill-grid">
+<span class="md-ellipsis">
+      ⚖️ Balancing the Skill Grid
+    </span>
+</a>
+<nav aria-label="⚖️ Balancing the Skill Grid" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-core-problem">
+<span class="md-ellipsis">
+      The Core Problem
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mitigation-systems">
+<span class="md-ellipsis">
+      Mitigation Systems
+    </span>
+</a>
+<nav aria-label="Mitigation Systems" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-mana-system-resource-cost">
+<span class="md-ellipsis">
+      1. Mana System (Resource Cost)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-overheat-system-execution-cost">
+<span class="md-ellipsis">
+      2. Overheat System (Execution Cost)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-trigger-rate-limits-throttle">
+<span class="md-ellipsis">
+      3. Trigger Rate Limits (Throttle)
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-decay-diminishing-returns">
+<span class="md-ellipsis">
+      4. Decay / Diminishing Returns
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-external-anchors-event-only-chains">
+<span class="md-ellipsis">
+      5. External Anchors (Event-Only Chains)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#design-approach-recommendation">
+<span class="md-ellipsis">
+      Design Approach Recommendation
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#minimal-example">
+<span class="md-ellipsis">
+      Minimal Example
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="skill-grid-overview">⚔️ Skill Grid – Overview<a class="headerlink" href="#skill-grid-overview" title="Permanent link">¶</a></h1>
+<h2 id="core-idea"><strong>Core Idea</strong><a class="headerlink" href="#core-idea" title="Permanent link">¶</a></h2>
+<p>The <strong>Skill Grid</strong> is a programmable system that lets players define their own
+active and passive abilities. Instead of fixed skill trees, abilities emerge
+from how players arrange and connect blocks within the grid. This creates
+flexible builds, encourages experimentation, and makes progression (larger
+grids, more block types) meaningful.</p>
+<hr/>
+<h2 id="core-components"><strong>Core Components</strong><a class="headerlink" href="#core-components" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p><strong>Trigger Blocks</strong></p>
+<ul>
+<li>Activate when certain <strong>conditions</strong> are met.</li>
+<li>Two main categories:<ul>
+<li><strong>Input Triggers</strong> -&gt; bound to key/button presses (function like
+  traditional active skills).</li>
+<li><strong>Event Triggers</strong> -&gt; tied to gameplay events (e.g. <em>on damage taken</em>,
+  <em>on perfect parry</em>, <em>on kill</em>).</li>
+</ul>
+</li>
+<li>Can connect to one or more Action Blocks.</li>
+</ul>
+</li>
+<li>
+<p><strong>Action Blocks</strong></p>
+<ul>
+<li>Execute effects when activated by a Trigger.</li>
+<li>Examples:<ul>
+<li>Heal the player.</li>
+<li>Damage nearby enemies.</li>
+<li>Summon a projectile or shield.</li>
+</ul>
+</li>
+<li>Serve as the “payload” of the skill system.</li>
+</ul>
+</li>
+<li>
+<p><strong>Advanced/Utility Blocks (Future Expansion)</strong></p>
+<ul>
+<li>Add variety, creativity, and depth:<ul>
+<li><strong>Relay / Chain Trigger</strong> -&gt; activates when another Trigger fires.</li>
+<li><strong>Copy Block</strong> -&gt; duplicates the behavior of an adjacent block.</li>
+<li><strong>Modifier Blocks</strong> -&gt; alter nearby Actions (e.g. convert damage to
+  fire, increase radius, add poison).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h3 id="skill-types-supported"><strong>Skill Types Supported</strong><a class="headerlink" href="#skill-types-supported" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Active Skills</strong> -&gt; Player presses a button, the bound Trigger fires, linked
+  Actions execute.</li>
+<li><strong>Reactive Skills</strong> -&gt; Gameplay events automatically trigger Actions (like
+  passives).</li>
+</ul>
+<hr/>
+<h3 id="early-scope-vs-long-term"><strong>Early Scope vs. Long-Term</strong><a class="headerlink" href="#early-scope-vs-long-term" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Early versions</strong> will focus on the basics:<ul>
+<li>A small set of Input and Event Triggers.</li>
+<li>A few versatile Actions (heal, damage, buff).</li>
+</ul>
+</li>
+<li><strong>Later expansions</strong> can introduce fun/complex blocks for creative expression.</li>
+</ul>
+<hr/>
+<h2 id="balancing-the-skill-grid">⚖️ Balancing the Skill Grid<a class="headerlink" href="#balancing-the-skill-grid" title="Permanent link">¶</a></h2>
+<h3 id="the-core-problem"><strong>The Core Problem</strong><a class="headerlink" href="#the-core-problem" title="Permanent link">¶</a></h3>
+<ul>
+<li>Players can chain Triggers and Actions to create loops.</li>
+<li>Loops can be <strong>internal</strong> (Trigger A -&gt; B -&gt; A) or <strong>external</strong> (Trigger -&gt;
+  Event -&gt; other Trigger -&gt; first Trigger again).</li>
+<li>While we want to allow clever combos and “power moments,” we must avoid
+  infinite spam that trivializes gameplay.</li>
+</ul>
+<hr/>
+<h3 id="mitigation-systems"><strong>Mitigation Systems</strong><a class="headerlink" href="#mitigation-systems" title="Permanent link">¶</a></h3>
+<h4 id="1-mana-system-resource-cost">1. <strong>Mana System (Resource Cost)</strong><a class="headerlink" href="#1-mana-system-resource-cost" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Each Action Block consumes mana</strong> when executed.</li>
+<li>If insufficient mana:<ul>
+<li>Option A: Action sits in a queue until mana regenerates.</li>
+<li>Option B: Action is discarded.</li>
+</ul>
+</li>
+<li><strong>Mana regenerates slowly over time.</strong></li>
+<li>Benefits:<ul>
+<li>Familiar RPG mechanic (easy to explain).</li>
+<li>Prevents infinite loops by draining resources.</li>
+</ul>
+</li>
+<li>Risks:<ul>
+<li>Strong mana regen builds might still break balance unless capped.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h4 id="2-overheat-system-execution-cost">2. <strong>Overheat System (Execution Cost)</strong><a class="headerlink" href="#2-overheat-system-execution-cost" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Each Action Block generates heat.</strong></li>
+<li>Heat builds up with rapid or repeated activations.</li>
+<li>If total heat exceeds threshold:<ul>
+<li>All queued actions are cleared.</li>
+<li>Triggers deactivate for a cooldown window.</li>
+<li>(Optional) Player takes backlash damage.</li>
+</ul>
+</li>
+<li><strong>Heat dissipates gradually over time.</strong></li>
+<li>Benefits:<ul>
+<li>Encourages pacing and rhythm in combos.</li>
+<li>“Overheat shutdown” feels thematic (fits tech or magic equally well).</li>
+</ul>
+</li>
+<li>Risks:<ul>
+<li>May frustrate players if it feels too punishing. Needs good
+  feedback/telegraphing.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h4 id="3-trigger-rate-limits-throttle">3. <strong>Trigger Rate Limits (Throttle)</strong><a class="headerlink" href="#3-trigger-rate-limits-throttle" title="Permanent link">¶</a></h4>
+<ul>
+<li>Put a <strong>per-trigger cooldown</strong> (e.g. Trigger A can only fire once every 0.5s).</li>
+<li>Ensures loops can’t run infinitely fast.</li>
+<li>Benefits:<ul>
+<li>Simple, predictable cap.</li>
+</ul>
+</li>
+<li>Risks:<ul>
+<li>Feels restrictive — undermines the “programmable” fantasy.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h4 id="4-decay-diminishing-returns">4. <strong>Decay / Diminishing Returns</strong><a class="headerlink" href="#4-decay-diminishing-returns" title="Permanent link">¶</a></h4>
+<ul>
+<li>Repeatedly triggering the same loop reduces effectiveness:<ul>
+<li>Each repeat deals less damage / heals less until it bottoms out.</li>
+</ul>
+</li>
+<li>Benefits:<ul>
+<li>Keeps combos fun for a while, then self-limiting.</li>
+</ul>
+</li>
+<li>Risks:<ul>
+<li>Harder for players to understand (“why did my damage shrink?”).</li>
+<li>Harder to program because actions are still getting executed.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h4 id="5-external-anchors-event-only-chains">5. <strong>External Anchors (Event-Only Chains)</strong><a class="headerlink" href="#5-external-anchors-event-only-chains" title="Permanent link">¶</a></h4>
+<ul>
+<li>Restrict some triggers to <strong>external events only</strong> (damage taken, parry, kill).</li>
+<li>They cannot be re-triggered by other triggers.</li>
+<li>Benefits:<ul>
+<li>Loops can’t self-sustain forever.</li>
+</ul>
+</li>
+<li>Risks:<ul>
+<li>Adds hidden rules players must learn.</li>
+<li>Does not <strong>fundamentally</strong> prevent infinite loops.</li>
+<li>Requires careful design of triggers.</li>
+</ul>
+</li>
+</ul>
+<hr/>
+<h3 id="design-approach-recommendation"><strong>Design Approach Recommendation</strong><a class="headerlink" href="#design-approach-recommendation" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Hybrid system</strong>:<ul>
+<li>Start with <strong>Mana and/or Overheat</strong> as the main balancing axes.</li>
+<li>If not enough, add <strong>light rate limits</strong> on a per-trigger basis.</li>
+</ul>
+</li>
+<li>This gives:<ul>
+<li>Resource management (mana).</li>
+<li>Combo pacing (overheat).</li>
+<li>Safety net (rate limit).</li>
+</ul>
+</li>
+<li>Allows crazy combos, but forces players to think about <em>when</em> to unleash them.</li>
+</ul>
+<hr/>
+<h2 id="minimal-example">Minimal Example<a class="headerlink" href="#minimal-example" title="Permanent link">¶</a></h2>
+<p><div class="mxgraph" data-mxgraph='{"toolbar": "zoom", "tooltips": "1", "border": 5, "resize": "1", "edit": "_blank", "highlight": null, "xml": "&lt;mxfile host=\"app.diagrams.net\" agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0\" version=\"28.2.3\"&gt;\n  &lt;diagram name=\"Page-1\" id=\"UjrdqVZSy6HgyASzCU8v\"&gt;\n    &lt;mxGraphModel dx=\"1418\" dy=\"786\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"850\" pageHeight=\"1100\" math=\"0\" shadow=\"0\"&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\"0\"/&gt;\n        &lt;mxCell id=\"1\" parent=\"0\"/&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-44\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"240\" y=\"240\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-45\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"330\" y=\"240\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-46\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"420\" y=\"240\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-47\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"510\" y=\"240\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-48\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"600\" y=\"240\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-49\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"240\" y=\"330\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-50\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"330\" y=\"330\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-51\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"420\" y=\"330\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-52\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"510\" y=\"330\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-53\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"600\" y=\"330\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-54\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"240\" y=\"420\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-55\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"330\" y=\"420\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-56\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"420\" y=\"420\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-57\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"510\" y=\"420\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-58\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"600\" y=\"420\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-59\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"240\" y=\"510\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-60\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"330\" y=\"510\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-61\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"420\" y=\"510\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-62\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"510\" y=\"510\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-63\" value=\"\" style=\"rounded=0;whiteSpace=wrap;html=1;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"600\" y=\"510\" width=\"80\" height=\"80\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-74\" value=\"Trigger&amp;lt;div&amp;gt;(On Heal)&amp;lt;/div&amp;gt;\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"250\" y=\"340\" width=\"60\" height=\"60\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-78\" value=\"Trigger&amp;lt;div&amp;gt;(Skill 1)&amp;lt;/div&amp;gt;\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"340\" y=\"520\" width=\"60\" height=\"60\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-81\" value=\"Shoot a fireball\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"340\" y=\"430\" width=\"60\" height=\"60\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-82\" value=\"Buff&amp;amp;nbsp;&amp;lt;span style=&amp;quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&amp;quot;&amp;gt;ATK&amp;lt;/span&amp;gt;\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"340\" y=\"340\" width=\"60\" height=\"60\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-83\" style=\"edgeStyle=orthogonalEdgeStyle;shape=flexArrow;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;opacity=50;\" edge=\"1\" parent=\"1\" source=\"ytbEYyM1-JPKGnNeVmck-78\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"370\" y=\"400\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-87\" value=\"Heal player\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"430\" y=\"340\" width=\"60\" height=\"60\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-75\" style=\"edgeStyle=orthogonalEdgeStyle;shape=flexArrow;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fillColor=#d5e8d4;strokeColor=#82b366;opacity=50;\" edge=\"1\" parent=\"1\" source=\"ytbEYyM1-JPKGnNeVmck-74\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"&gt;\n            &lt;mxPoint x=\"430\" y=\"370\" as=\"targetPoint\"/&gt;\n          &lt;/mxGeometry&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-94\" style=\"edgeStyle=orthogonalEdgeStyle;shape=flexArrow;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#f8cecc;strokeColor=#b85450;opacity=50;\" edge=\"1\" parent=\"1\" source=\"ytbEYyM1-JPKGnNeVmck-91\" target=\"ytbEYyM1-JPKGnNeVmck-93\"&gt;\n          &lt;mxGeometry relative=\"1\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-91\" value=\"Trigger&amp;lt;div&amp;gt;(Skill 2)&amp;lt;/div&amp;gt;\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"250\" y=\"520\" width=\"60\" height=\"60\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"ytbEYyM1-JPKGnNeVmck-93\" value=\"Buff DEF\" style=\"ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"610\" y=\"430\" width=\"60\" height=\"60\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;"}' style="max-width:100%;border:1px solid transparent;"></div></p>
+<p>In this example, there are 3 trigger blocks and 4 action blocks.</p>
+<ul>
+<li>When player presses the <em>skill 1</em> button, the two actions above are executed
+  in order: First a fireball is shot, then the player gets an ATK buff.</li>
+<li>When player presses the <em>skill 2</em> button, the five blocks in the row above are
+  activated from left to right, but there are only two valid action blocks
+  within: First a fireball is shot, then the player gets an DEF buff.</li>
+<li>When the player character is healed in any way, the two blocks on the right of
+  <em>Trigger (On Heal)</em> are activated: An ATK buff followed by a heal action<ul>
+<li>Note that the heal action would re-trigger the <em>Trigger (On Heal)</em>,
+  causing a loop. This is where the balancing mechanic discussed above kicks
+  in.</li>
+</ul>
+</li>
+</ul>
+<aside class="md-source-file">
+<span class="md-source-file__fact">
+<span class="md-icon" title="Last update">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
+</span>
+    2025-11-09
+  </span>
+</aside>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+<script src="../assets/javascripts/panzoom.min.js"></script>
+<script src="../assets/javascripts/zoompan.js"></script>
+<script src="https://viewer.diagrams.net/js/viewer-static.min.js"></script></body>
+</html>

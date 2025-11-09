@@ -1,0 +1,1229 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../skill_grid/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Scene Transitions - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/panzoom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <meta name="panzoom-theme" content="material">
+<meta name="panzoom-data" content='{"selectors": [".mermaid", ".d2"], "initial_zoom_level": 1.0}'> </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#scene-transitions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Scene Transitions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design_decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧠 Design Decisions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🎮 Game Overview -- [Working Title]
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skill_grid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ⚔️ Skill Grid – Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Implementation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Implementation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Scene Transitions
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scene Transitions
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Basics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-scene-loading-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Scene Loading Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Scene Loading Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mmsceneloadingmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      MMSceneLoadingManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#levelmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      LevelManager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-scene-transition-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Scene Transition Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Scene Transition Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finishlevel" class="md-nav__link">
+    <span class="md-ellipsis">
+      FinishLevel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gotolevelentrypoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      GoToLevelEntryPoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teleporter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teleporter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-levelmanager-and-character-bounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 LevelManager and Character Bounds
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cross-scene-room-transitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Cross-Scene Room Transitions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Cross-Scene Room Transitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hub-room" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hub -&gt; Room
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#room-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Room -&gt; Hub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Note
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-same-scene-teleports" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Same-Scene Teleports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-dungeon-traversal" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Dungeon Traversal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Dungeon Traversal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generation-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generation Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-transition-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level Transition Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level Transition Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-entering-the-dungeon" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Entering the Dungeon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-advancing-to-the-next-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Advancing to the Next Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-returning-to-the-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Returning to the Hub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-reverse-traversal-experimental" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Reverse Traversal (Experimental)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spawn-synchronization-and-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spawn Synchronization and Timing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Basics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Basics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-scene-loading-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Scene Loading Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Scene Loading Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mmsceneloadingmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      MMSceneLoadingManager
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#levelmanager" class="md-nav__link">
+    <span class="md-ellipsis">
+      LevelManager
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-scene-transition-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Scene Transition Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 Scene Transition Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finishlevel" class="md-nav__link">
+    <span class="md-ellipsis">
+      FinishLevel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gotolevelentrypoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      GoToLevelEntryPoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teleporter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teleporter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-levelmanager-and-character-bounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 LevelManager and Character Bounds
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cross-scene-room-transitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Cross-Scene Room Transitions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Cross-Scene Room Transitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hub-room" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hub -&gt; Room
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#room-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Room -&gt; Hub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Important Note
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-same-scene-teleports" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Same-Scene Teleports
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-dungeon-traversal" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Dungeon Traversal
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Dungeon Traversal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generation-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generation Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#level-transition-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Level Transition Flow
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level Transition Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-entering-the-dungeon" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Entering the Dungeon
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-advancing-to-the-next-level" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Advancing to the Next Level
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-returning-to-the-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Returning to the Hub
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-reverse-traversal-experimental" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Reverse Traversal (Experimental)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spawn-synchronization-and-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spawn Synchronization and Timing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="scene-transitions">Scene Transitions<a class="headerlink" href="#scene-transitions" title="Permanent link">&para;</a></h1>
+<p>This document explains how <strong>scene and room transitions</strong> are handled in our
+game, using and extending features provided by <strong>Corgi Engine</strong> and
+<strong>Edgar Unity</strong>.</p>
+<hr />
+<h2 id="1-basics">1. Basics<a class="headerlink" href="#1-basics" title="Permanent link">&para;</a></h2>
+<p>Corgi Engine provides several built-in systems to handle scene transitions,
+teleportation, and level management.
+These systems include <strong>scripted scene loading functions</strong> and
+<strong>ready-to-use components</strong>.</p>
+<h3 id="11-scene-loading-functions">1.1 Scene Loading Functions<a class="headerlink" href="#11-scene-loading-functions" title="Permanent link">&para;</a></h3>
+<p>All Corgi Engine scene loading methods support <strong>loading screens</strong>, which can be
+customized to display arbitrary content or disabled entirely.</p>
+<h4 id="mmsceneloadingmanager"><code>MMSceneLoadingManager</code><a class="headerlink" href="#mmsceneloadingmanager" title="Permanent link">&para;</a></h4>
+<p><code>LoadScene(string sceneName)</code></p>
+<ul>
+<li>A <strong>static</strong> and minimal function for switching to another scene.</li>
+<li>Use it like Unity’s native <code>SceneManager.LoadScene</code>.</li>
+<li>Does <strong>not</strong> require a <code>LevelManager</code> instance.</li>
+<li>Does <strong>not</strong> apply fade or disable character controls automatically.</li>
+</ul>
+<h4 id="levelmanager"><code>LevelManager</code><a class="headerlink" href="#levelmanager" title="Permanent link">&para;</a></h4>
+<p><code>GotoLevel(string levelName, bool fadeOut = true, bool save = true)</code></p>
+<ul>
+<li>A <strong>member function</strong> that must be called on a <strong>LevelManager instance</strong>
+  (usually the singleton).</li>
+<li>Provides extra functionality:<ul>
+<li>Optionally performs a <strong>fade-out/in</strong> transition.</li>
+<li>Temporarily <strong>disables player character abilities</strong> until the new scene is
+  loaded.</li>
+<li>Handles <strong>save data</strong> if enabled.</li>
+</ul>
+</li>
+</ul>
+<p>This is usually the preferred method when a <code>LevelManager</code> instance is
+available.</p>
+<hr />
+<h3 id="12-scene-transition-components">1.2 Scene Transition Components<a class="headerlink" href="#12-scene-transition-components" title="Permanent link">&para;</a></h3>
+<p>Corgi Engine provides a few reusable components that automate transitions when
+attached to a <code>GameObject</code> in a scene:</p>
+<h4 id="finishlevel"><strong>FinishLevel</strong><a class="headerlink" href="#finishlevel" title="Permanent link">&para;</a></h4>
+<p><em>Path: <code>Assets/CorgiEngine/Common/Scripts/Spawn/FinishLevel.cs</code></em></p>
+<ul>
+<li>Inherits from <code>ButtonActivated</code>.</li>
+<li>Attach to a <code>GameObject</code> with a <code>Collider2D</code>.</li>
+<li>Configure a <strong>target scene name</strong> in the inspector.</li>
+<li>On activation (via <strong>button press</strong> or <strong>trigger enter</strong>), it will load the
+  specified scene.</li>
+<li>By default, the player will spawn at the <strong>first <code>Checkpoint</code></strong> found in the
+  new scene.</li>
+</ul>
+<h4 id="gotolevelentrypoint"><strong>GoToLevelEntryPoint</strong><a class="headerlink" href="#gotolevelentrypoint" title="Permanent link">&para;</a></h4>
+<p><em>Path: <code>Assets/CorgiEngine/Common/Scripts/Spawn/GoToLevelEntryPoint.cs</code></em></p>
+<ul>
+<li>Inherits from <code>FinishLevel</code>.</li>
+<li>Adds the ability to specify a <strong>spawn entry point index</strong>.</li>
+<li>If the <code>LevelManager</code> in the destination scene finds a
+  <strong>registered entry point</strong> with that index, the player will spawn there.</li>
+<li>Otherwise, it falls back to the first checkpoint (same as <code>FinishLevel</code>).</li>
+<li><strong>Note:</strong> <em>Point of Entry</em> and <em>Checkpoint</em> are two distinct position
+  initialization methods. A <em>Point of Entry</em> does not need to be a <em>Checkpoint</em>,
+  nor does a <em>Checkpoint</em> need to register as a <em>Point of Entry</em>. That being
+  said, nothing prevents an object from being both a <em>Point of Entry</em> and a
+  <em>Checkpoint</em>.</li>
+</ul>
+<h4 id="teleporter"><strong>Teleporter</strong><a class="headerlink" href="#teleporter" title="Permanent link">&para;</a></h4>
+<p><em>Path: <code>Assets/CorgiEngine/Common/ScriptsCinemachine/Environment/Teleporter.cs</code></em></p>
+<ul>
+<li>Also inherits from <code>ButtonActivated</code>.</li>
+<li>Used for <strong>teleportation within the same scene</strong>.</li>
+<li>Attach to a GameObject with a collider and specify another <code>Teleporter</code> as the
+  <strong>target</strong>.</li>
+<li>On activation, moves the player instantly to the target’s position.</li>
+</ul>
+<hr />
+<h3 id="13-levelmanager-and-character-bounds">1.3 LevelManager and Character Bounds<a class="headerlink" href="#13-levelmanager-and-character-bounds" title="Permanent link">&para;</a></h3>
+<p>Two additional components play an important role in Corgi’s scene and world management:</p>
+<ul>
+<li><strong>LevelManager</strong>:<ul>
+<li>Handles scene loading, checkpoint logic, respawns, and player persistence.</li>
+<li>Register points of entry for <code>GoToLevelEntryPoint</code> in the <code>PointsOfEntry</code>
+  list.</li>
+<li>Define <code>Center</code> and <code>Extent</code> (size) of level bounds in the inspector.</li>
+<li>There is a "Debug Spawn" field that overrides spawn points so we usually
+  want to leave it empty.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Note: The default implementation is a <strong>singleton</strong>, which may not fit
+projects using additive scene loading or multiple level contexts (e.g.,
+multiplayer hosts).</p>
+</blockquote>
+<ul>
+<li><strong>Character Level Bounds</strong>:
+  Keeps the player within the level and kills or stops them when leaving bounds.
+  Player may fail to spawn properly when the selected spawn/entry point is
+  outside the level bounds.</li>
+</ul>
+<blockquote>
+<p>Known bug: Removing it can cause physics instabilities such as bouncing or
+clipping through the floor.</p>
+</blockquote>
+<hr />
+<h2 id="2-cross-scene-room-transitions">2. Cross-Scene Room Transitions<a class="headerlink" href="#2-cross-scene-room-transitions" title="Permanent link">&para;</a></h2>
+<p>This setup handles moving between separate Unity scenes — for example,
+transitioning between a central hub area and individual room scenes. Each room
+is stored in its own scene, and the player can freely enter or exit these rooms
+ When returning to the hub, the player should reappear at the specific entrance
+ they originally used, rather than the default spawn point.</p>
+<h3 id="hub-room">Hub -&gt; Room<a class="headerlink" href="#hub-room" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In the <strong>hub scene</strong>, locate each room entrance object.</li>
+<li>Add a <strong><code>BoxCollider2D</code></strong> (set as a trigger) and a <strong><code>FinishLevel</code></strong> component.</li>
+<li>Configure the <strong><code>FinishLevel</code></strong> component to load the target room scene as
+   the next level.<ul>
+<li>For rooms with a single entrance/exit, this setup is sufficient.</li>
+<li>If a room has multiple exits and you want to control which door the player
+  appears at, use <strong><code>GoToLevelEntryPoint</code></strong> instead of <code>FinishLevel</code>.</li>
+</ul>
+</li>
+</ol>
+<h3 id="room-hub">Room -&gt; Hub<a class="headerlink" href="#room-hub" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In the <strong>hub scene</strong>, register each entrance point with the
+   <strong><code>LevelManager</code></strong> in its <strong>"Points of Entry"</strong> list.</li>
+<li>In the <strong>room scene</strong>, attach a <strong><code>BoxCollider2D</code></strong> and a
+   <strong><code>GoToLevelEntryPoint</code></strong> component to the exit door.</li>
+<li>Configure <strong><code>GoToLevelEntryPoint</code></strong> to:<ul>
+<li>Load the <strong>hub scene</strong> name, and</li>
+<li>Specify the correct entry index (matching the hub entrance from the
+  "Points of Entry" list).</li>
+</ul>
+</li>
+</ol>
+<p>This ensures that when the player returns, they appear at the correct hub entrance.</p>
+<h3 id="important-note">Important Note<a class="headerlink" href="#important-note" title="Permanent link">&para;</a></h3>
+<p>Both the <strong>hub scene</strong> and all <strong>room scenes</strong> must be included in the
+<strong>Build Settings</strong> scene list. Unity cannot load scenes at runtime unless
+they’re registered there.</p>
+<hr />
+<h2 id="3-same-scene-teleports">3. Same-Scene Teleports<a class="headerlink" href="#3-same-scene-teleports" title="Permanent link">&para;</a></h2>
+<p>Same-scene teleports allow moving between multiple points in the same scene.
+This should allowing building multiple rooms within the same scene, minimizing
+loading time.</p>
+<p>Corgi’s <code>Teleporter</code> component can move characters between two positions within
+one scene, but by default:</p>
+<ul>
+<li>Adjacent rooms remain <strong>visible/active</strong> instead of being masked out.</li>
+<li>The <strong>camera</strong> is not confined to the new room’s bounds.</li>
+</ul>
+<p>The built-in <code>Room</code> and <code>RoomManager</code> systems in Corgi <strong>appear to support this</strong>,
+but documentation is outdated and needs investigation.</p>
+<p><strong>Next steps:</strong></p>
+<ul>
+<li>Study how <code>RoomManager</code> constrains camera and visibility.</li>
+<li>Prototype same-scene room transitions with masking and camera limits.</li>
+<li>Evaluate performance and practicality compared to multi-scene transitions.</li>
+</ul>
+<p><strong>Status:</strong>
+🟡 Works, but not perfect yet.</p>
+<hr />
+<h2 id="4-dungeon-traversal">4. Dungeon Traversal<a class="headerlink" href="#4-dungeon-traversal" title="Permanent link">&para;</a></h2>
+<p>Before we can discuss how dungeon traversal works, we need to understand how
+<strong>dungeon generation</strong> is structured at a high level.</p>
+<p>The <strong>Dungeon Generator</strong> takes a <code>LevelGraph</code> as input and uses it to build a
+level. A <code>LevelGraph</code> defines:</p>
+<ul>
+<li>How room nodes are connected, and</li>
+<li>Which room prefabs can be used for each node.</li>
+</ul>
+<p>Each dungeon level in a run uses a different randomization seed (and possibly a
+different graph), but otherwise, the generation process is identical. Instead of
+maintaining dozens of nearly identical Unity scenes, we reuse a
+<strong>single base scene</strong> that contains the generator, and we pass in generation
+parameters at runtime.</p>
+<hr />
+<h3 id="generation-parameters">Generation Parameters<a class="headerlink" href="#generation-parameters" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Base Seed:</strong> A single seed that determines the overall randomization for the
+  run.</li>
+<li><strong>Level Number:</strong> An integer that identifies the current level within the run.</li>
+<li><strong>Level Graphs:</strong> A list of predefined <code>LevelGraph</code> assets, one per dungeon
+  level (stored in the generator).</li>
+</ul>
+<p>Each level’s generation seed is derived from the base seed:</p>
+<div class="language-csharp highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">level_seed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">base_seed</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">level_number</span>
+</code></pre></div></td></tr></table></div>
+<p>The generator selects the corresponding <code>LevelGraph</code> from the list using the
+level number as an index.</p>
+<hr />
+<h3 id="level-transition-flow">Level Transition Flow<a class="headerlink" href="#level-transition-flow" title="Permanent link">&para;</a></h3>
+<h4 id="1-entering-the-dungeon">1. Entering the Dungeon<a class="headerlink" href="#1-entering-the-dungeon" title="Permanent link">&para;</a></h4>
+<p>When the player enters the dungeon from the hub:</p>
+<ul>
+<li>The game records the <strong>base seed</strong> for the run.</li>
+<li>The next <strong>level number</strong> (usually <code>0</code> for the first dungeon level) is stored
+  in a <strong>static variable</strong>.</li>
+<li>The dungeon base scene is loaded, and the generator uses the parameters above
+  to build the level.</li>
+</ul>
+<p>This logic is handled by an <strong>extended version of the <code>FinishLevel</code></strong> component.</p>
+<hr />
+<h4 id="2-advancing-to-the-next-level">2. Advancing to the Next Level<a class="headerlink" href="#2-advancing-to-the-next-level" title="Permanent link">&para;</a></h4>
+<p>When the player reaches the end of a dungeon level:</p>
+<ul>
+<li>An <strong>extended <code>FinishLevel</code></strong> component increments the static level number
+  (<code>level_number += 1</code>).</li>
+<li>The same <strong>base scene</strong> is reloaded.</li>
+<li>The generator uses the new level number and base seed to build the next level.</li>
+</ul>
+<p>This allows seamless multi-level progression without maintaining separate Unity
+scenes for each floor.</p>
+<hr />
+<h4 id="3-returning-to-the-hub">3. Returning to the Hub<a class="headerlink" href="#3-returning-to-the-hub" title="Permanent link">&para;</a></h4>
+<p>At the end of a “meta-level” (i.e., after the final floor of a dungeon branch),
+the exit uses a <strong><code>GoToLevelEntryPoint</code></strong> component instead of <code>FinishLevel</code>.</p>
+<p>This component:</p>
+<ul>
+<li>Loads the <strong>hub scene</strong>, and</li>
+<li>Positions the player at the correct gate or return point.</li>
+</ul>
+<hr />
+<h4 id="4-reverse-traversal-experimental">4. Reverse Traversal (Experimental)<a class="headerlink" href="#4-reverse-traversal-experimental" title="Permanent link">&para;</a></h4>
+<p>We’ve also implemented <strong>reverse traversal</strong>, though it’s uncertain whether this
+will remain in the final game design.</p>
+<ul>
+<li>Interacting with the <em>entrance</em> of a dungeon level sends the player back to
+  the <strong>previous level’s exit</strong>.</li>
+<li>This is done via an <strong>extended <code>GoToLevelEntryPoint</code></strong> component that:<ul>
+<li>Decrements the level number (<code>level_number--</code>), and</li>
+<li>Sets the target point index to <code>0</code> (the registered exit spawn point).</li>
+</ul>
+</li>
+<li>The exit in each level also registers itself with the <code>LevelManager</code> as the
+  <strong>first point of entry</strong>, ensuring proper positioning when returning.</li>
+</ul>
+<hr />
+<h3 id="spawn-synchronization-and-timing">Spawn Synchronization and Timing<a class="headerlink" href="#spawn-synchronization-and-timing" title="Permanent link">&para;</a></h3>
+<p>Because the generator builds rooms dynamically, there’s a risk that the
+player might spawn before the designated entry point (entrance or exit) is
+registered. To prevent this race condition:</p>
+<ul>
+<li>The <strong>Level Manager</strong> delays player spawning by <strong>two frames</strong>, giving the
+  generated level time to register its spawn points and other initialization data.</li>
+<li>This simple delay has proven sufficient to ensure consistent and correct spawn
+  positioning.</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    2025-11-09
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../assets/javascripts/panzoom.min.js"></script>
+      
+        <script src="../../assets/javascripts/zoompan.js"></script>
+      
+    
+  </body>
+</html>
