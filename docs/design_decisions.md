@@ -153,13 +153,14 @@ Boss rooms can be standalone scenes or part of dungeons.
 
 | Aspect | Decision |
 |--------|-----------|
-| Visual Style | Any |
+| Visual Style | Likely 3D low-poly |
 | Camera | 2D side-scroller |
 | UI Style | Any |
 | Input Target | keyboard first + controller |
 
 - **Rationale / Comments:**
-  -
+    - Compared to pixel arts, it's easier to find low-poly assets with consistent style
+    - We could even make our own models
 
 - **Open Questions:**
   -
